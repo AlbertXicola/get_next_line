@@ -123,6 +123,9 @@ char	*get_next_line(int fd)
 	linea = sanitase(stash);
 	old_stash = stash;
 	stash = sanitazeinverso(stash);
-	free(old_stash);
+	if (stash == NULL)
+		free(old_stash);
+	else
+		free(old_stash);
 	return (linea);
 }
